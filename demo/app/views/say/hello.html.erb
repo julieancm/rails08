@@ -2,3 +2,16 @@
 <p>
 	It is now <%= @time %>
 </p>
+<p>
+	<% @files = Dir.glob('*') %>
+	<% for file in @files %>
+		<ul>
+			<li>file name is: <%= file %></li>
+		</ul>
+	<% end %>
+</p>
+<p>
+	<!--Say <a href="/say/goodbye"></a> -->
+	Time to say 
+	<%= link_to "Goodbye!", say_goodbye_path %>
+</p>
